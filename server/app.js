@@ -9,6 +9,11 @@ const usersRouter = require('./routes/users')
 
 const app = express()
 
+// Use the .env file while in DEV
+if (process.env.NODE_ENV === 'dev') 
+  require("dotenv").config()
+
+
 // TODO: Check if this is still needed since we have React
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))

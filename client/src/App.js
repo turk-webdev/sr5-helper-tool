@@ -16,7 +16,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          {!data ? "Loading..." : data}
+          {!data ? "No data" : data}
         </p>
       </header>
     </div>
