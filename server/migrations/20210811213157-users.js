@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = {
-  up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('users', {
+  up: (queryInterface, Sequelize) => {
+    return queryInterface.createTable('users', {
       id : {
         type: Sequelize.BIGINT,
         primaryKey: true,
@@ -32,16 +32,10 @@ module.exports = {
         defaultValue: Sequelize.literal('NOW()')
       }
     })
-    /**
-     * Add altering commands here.
-     *
-     * Example:
-     * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
-     */
   },
 
-  down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('users')
+  down: (queryInterface, Sequelize) => {
+    return queryInterface.dropTable('users')
     /**
      * Add reverting commands here.
      *

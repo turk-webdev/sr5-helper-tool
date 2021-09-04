@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = {
-  up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('test', {
+  up: (queryInterface, Sequelize) => {
+    return queryInterface.createTable('test', {
       id : {
         type: Sequelize.BIGINT,
         primaryKey: true,
@@ -32,8 +32,8 @@ module.exports = {
      */
   },
 
-  down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('users')
+  down: (queryInterface, Sequelize) => {
+    return queryInterface.dropTable('test')
     /**
      * Add reverting commands here.
      *

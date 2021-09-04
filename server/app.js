@@ -13,12 +13,6 @@ const app = express()
 if (process.env.NODE_ENV === 'dev') 
   require("dotenv").config()
 
-
-// TODO: Check if this is still needed since we have React
-// view engine setup
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'jade')
-
 app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))

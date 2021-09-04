@@ -1,26 +1,15 @@
-import React from 'react'
-import logo from './logo.svg'
+import { useState, useEffect } from 'react'
 import './App.css'
 
-function App() {
-  const [data, setData] = React.useState(null)
+// Component imports
+import Test from './components/Test'
 
-  React.useEffect(() => {
-    fetch('/api/test')
-      .then((res) => res.json())
-      .then((data) => setData(data.message))
-  }, [])
+const App = () => {
+  const [userLoggedIn, setUserLoggedIn] = useState(false)
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          {!data ? "No data" : data}
-        </p>
-      </header>
-    </div>
-  )
+  if (userLoggedIn) {
+    return 
+  }
 }
 
 export default App
