@@ -1,11 +1,15 @@
 import React from 'react'
 
-function Homepage() {
-    return (
-        <div>
-            
-        </div>
-    )
+const Homepage = ({ loggedIn }) => {
+    if (loggedIn === 'true') {
+        return (
+            <></>
+        )
+    } else {
+        return (
+            <></>
+        ) 
+    }
 }
 
 export default Homepage
