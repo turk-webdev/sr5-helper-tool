@@ -1,5 +1,7 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
+import {Route} from 'react-router-dom'
 import './App.css'
+import './index.css'
 
 // Bootstrap component imports
 import Container from 'react-bootstrap/Container'
@@ -11,27 +13,17 @@ import Dashboard from './components/Dashboard'
 import LoginForm from './components/LoginForm'
 import RegisterForm from './components/RegisterForm'
 import Button from './components/Button'
+import LandingPage from './pages/LandingPage'
 
 const App = () => {
   const [userLoggedIn, setUserLoggedIn] = useState(false)
 
-  const loginRegister = (
-    <div class="content" id="landing">
-      <div />
-      <LoginForm />
-      <RegisterForm />
-      <div />
-    </div>
-  )
-  const body = userLoggedIn ? <Dashboard /> : loginRegister
-
   return (
-    <>
-    <Navbar />
-    <Container>
-      {body}
-    </Container>
-    </>
+    <div>
+      <Route exact path="/" render={() => (
+        <LandingPage userLoggedIn={userLoggedIn} />
+      )} />
+    </div>
   )
 }
 
